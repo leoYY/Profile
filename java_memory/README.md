@@ -1,5 +1,8 @@
 # Java heap memory profile or trace
 
+由于Java Heap内存由JVM单独管理，无法通过linux下的trace或profile工具对系统调用进行排查。而且由于Java的GC机制，hprof文件并不能方便的追查导致GC的原因，
+待GC的很多对象都已经unreachable。
+
 ## 相关工具
 
 | Name | desc |
