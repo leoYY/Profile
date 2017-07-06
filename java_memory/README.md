@@ -9,6 +9,11 @@
 |btrace|类似dtrace，systemtap等trace工具|
 |allocation-instrumenter|实现与btrace类似， 专注于trace memory allocation事件|
 
+## 其他工具
+| Name | desc |
+| ----| ---:|
+|javap| 可以直接用来查看.class文件的类似汇编的命令|
+
 ## 相关工具使用情况对比
 ***
 以上工具可以分为两部分，  
@@ -20,3 +25,5 @@
 并改写当前程序的bytecode，  
 优点：可以统计所有申请内存调用的数据，  
 缺点：TODO（目前排查频繁minor GC问题，比较需要trace类型的工具，感觉可以满足profile类工具的需求）；
+
+_通过查看new xxx[]的.class文件的命令，会存在专门的NEWARRAY命令，相关asm codegen也是通过匹配类似命令的方式实现_
